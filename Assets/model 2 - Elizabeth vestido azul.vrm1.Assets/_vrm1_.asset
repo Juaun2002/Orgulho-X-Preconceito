@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88684271e27adb843b6570957c9e7637, type: 3}
+  m_Name: _vrm1_
+  m_EditorClassIdentifier: VRM10::UniVRM10.VRM10Object
+  m_prefab: {fileID: -1728013695380148634, guid: fc449c0f0f7afa64a96744bbdc40c036, type: 3}
+  Meta:
+    Name: model 2 - Elizabeth vestido azul
+    Version: 
+    Authors:
+    - "Vit\xF3ria Dias"
+    CopyrightInformation: 
+    ContactInformation: 
+    References: []
+    ThirdPartyLicenses: 
+    Thumbnail: {fileID: 2178681595258467215, guid: fc449c0f0f7afa64a96744bbdc40c036, type: 3}
+    AvatarPermission: 0
+    ViolentUsage: 0
+    SexualUsage: 0
+    CommercialUsage: 0
+    PoliticalOrReligiousUsage: 0
+    AntisocialOrHateUsage: 0
+    CreditNotation: 0
+    Redistribution: 0
+    Modification: 0
+    OtherLicenseUrl: 
+  Expression:
+    Happy: {fileID: 11400000, guid: f5f0984ba4a1d5f42b1e4ba153d32370, type: 2}
+    Angry: {fileID: 11400000, guid: 3ce71480db681de468d1c89441f4ded4, type: 2}
+    Sad: {fileID: 11400000, guid: d664d2a4891ddc842b45c5cfe585f6b7, type: 2}
+    Relaxed: {fileID: 11400000, guid: f8774db93df1ab44085c5c3f0b600e03, type: 2}
+    Surprised: {fileID: 11400000, guid: 911027bd141fead46a62b9466846d3b5, type: 2}
+    Aa: {fileID: 11400000, guid: 0d7fc0db66586e844ac3a92b13c4f00d, type: 2}
+    Ih: {fileID: 11400000, guid: 66716788e6d755b43a453aafcc296da8, type: 2}
+    Ou: {fileID: 11400000, guid: 29c973a460fee7f4da04f0f0908819ed, type: 2}
+    Ee: {fileID: 11400000, guid: 47b5f341b8df02a44a368625a2a8a91d, type: 2}
+    Oh: {fileID: 11400000, guid: c8a32bea85867c3428bac6827f58311d, type: 2}
+    Blink: {fileID: 11400000, guid: 06856294a96f2784e9b8d2787450a4ab, type: 2}
+    BlinkLeft: {fileID: 11400000, guid: 1997bc3c094a8534383210480fd9d7da, type: 2}
+    BlinkRight: {fileID: 11400000, guid: a07bf7b251f0e5041995ae93f9c4156c, type: 2}
+    LookUp: {fileID: 11400000, guid: 6ff76ce81d12b514c8e394308978b41f, type: 2}
+    LookDown: {fileID: 11400000, guid: fa52ef237c1196648a583eb2ca43763b, type: 2}
+    LookLeft: {fileID: 11400000, guid: 074149c4b78450243930dd8f6c1f520f, type: 2}
+    LookRight: {fileID: 11400000, guid: db2f45e644a983d4ea3775ec6c331f11, type: 2}
+    Neutral: {fileID: 11400000, guid: 88066c38758f1294bb06eb18383a65e3, type: 2}
+    CustomClips: []
+  LookAt:
+    OffsetFromHead: {x: -0, y: 0.06, z: 0}
+    LookAtType: 0
+    HorizontalOuter:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 12
+    HorizontalInner:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 8
+    VerticalDown:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 10
+    VerticalUp:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 10
+  FirstPerson:
+    Renderers:
+    - Renderer: Face
+      FirstPersonFlag: 0
+    - Renderer: Body
+      FirstPersonFlag: 0
+    - Renderer: Hair
+      FirstPersonFlag: 0

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88684271e27adb843b6570957c9e7637, type: 3}
+  m_Name: _vrm1_
+  m_EditorClassIdentifier: VRM10::UniVRM10.VRM10Object
+  m_prefab: {fileID: -1728013695380148634, guid: 232699f85e3ea214ba2398135b71e116, type: 3}
+  Meta:
+    Name: Model - George Wickham
+    Version: 
+    Authors:
+    - "Vit\xF3ria Dias"
+    CopyrightInformation: 
+    ContactInformation: 
+    References: []
+    ThirdPartyLicenses: 
+    Thumbnail: {fileID: 2178681595258467215, guid: 232699f85e3ea214ba2398135b71e116, type: 3}
+    AvatarPermission: 0
+    ViolentUsage: 0
+    SexualUsage: 0
+    CommercialUsage: 0
+    PoliticalOrReligiousUsage: 0
+    AntisocialOrHateUsage: 0
+    CreditNotation: 0
+    Redistribution: 0
+    Modification: 0
+    OtherLicenseUrl: 
+  Expression:
+    Happy: {fileID: 11400000, guid: c60e7cd62b2419b4bad9a1af2aa4ad77, type: 2}
+    Angry: {fileID: 11400000, guid: 645e6a3fb5384e84eb09be945a33b1f1, type: 2}
+    Sad: {fileID: 11400000, guid: b5424c5191f2d684f8ce5a0fb7ed8f5a, type: 2}
+    Relaxed: {fileID: 11400000, guid: fbfe169e6e823df4ab765df83e51725f, type: 2}
+    Surprised: {fileID: 11400000, guid: f6f90ebccfde6b140bea2db304117c43, type: 2}
+    Aa: {fileID: 11400000, guid: 901d1c0400ac27a4a9e814196d5dec48, type: 2}
+    Ih: {fileID: 11400000, guid: 8a962ba549ef03841b79517e233cdd96, type: 2}
+    Ou: {fileID: 11400000, guid: f3cd3b374c3b83f47bba871d30bc2764, type: 2}
+    Ee: {fileID: 11400000, guid: 0c22bbc5e358b28468666018fd5de0b5, type: 2}
+    Oh: {fileID: 11400000, guid: 0c097c2989bc3504397d94de9d6a88a2, type: 2}
+    Blink: {fileID: 11400000, guid: d7945e00747baee4c918a44e83f09b80, type: 2}
+    BlinkLeft: {fileID: 11400000, guid: 293b90edb8c90534e920c566cd442004, type: 2}
+    BlinkRight: {fileID: 11400000, guid: 5fbfb96538e8e0e46bb7b79a3f0323e5, type: 2}
+    LookUp: {fileID: 11400000, guid: 14243d1c9d33d6841875dcceecbeb0dc, type: 2}
+    LookDown: {fileID: 11400000, guid: 9de261f2ed8328745ae8bc3c9df483ed, type: 2}
+    LookLeft: {fileID: 11400000, guid: 3bf3f3dabfe7fec4a9d3b202a8c8ad4f, type: 2}
+    LookRight: {fileID: 11400000, guid: 2472358ef56a61f40b7c31887f23d4ca, type: 2}
+    Neutral: {fileID: 11400000, guid: 559e0cef56d096145818526b7a1ca5f4, type: 2}
+    CustomClips: []
+  LookAt:
+    OffsetFromHead: {x: -0, y: 0.06, z: 0}
+    LookAtType: 0
+    HorizontalOuter:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 12
+    HorizontalInner:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 8
+    VerticalDown:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 10
+    VerticalUp:
+      CurveXRangeDegree: 90
+      CurveYRangeDegree: 10
+  FirstPerson:
+    Renderers:
+    - Renderer: Face
+      FirstPersonFlag: 0
+    - Renderer: Body
+      FirstPersonFlag: 0
+    - Renderer: Hair
+      FirstPersonFlag: 0

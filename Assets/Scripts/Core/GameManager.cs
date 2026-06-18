@@ -16,12 +16,15 @@ public class GameManager : MonoBehaviour
     [Range(0f, 100f)]
     public float prejudice = 50f;
 
+    public int savedDialogueIndex;
+
     // Relationships: NPC name -> relationship value (0-100)
     public Dictionary<string, float> relationships = new Dictionary<string, float>();
 
     // Events for UI / other systems to subscribe
     public Action<float, float> OnStatsChanged;
     public Action<string, float> OnRelationshipChanged;
+
 
     private void Awake()
     {
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
         // Persist current state using static SaveSystem if available
         try
         {
-            SaveSystem.SaveGame();
+            SaveSystem.SaveGame(savedDialogueIndex);
         }
         catch (Exception ex)
         {

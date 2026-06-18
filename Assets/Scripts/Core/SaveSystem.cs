@@ -14,6 +14,7 @@ public static class SaveSystem
     {
         public float pride;
         public float prejudice;
+        public int dialogueIndex;
         public List<RelationshipData> relationships;
     }
 
@@ -27,12 +28,13 @@ public static class SaveSystem
     /// <summary>
     /// Saves the current game state from GameManager.
     /// </summary>
-    public static void SaveGame()
+    public static void SaveGame(int currentLine)
     {
         SaveData data = new SaveData
         {
             pride = GameManager.Instance.pride,
             prejudice = GameManager.Instance.prejudice,
+            dialogueIndex = currentLine,
             relationships = new List<RelationshipData>()
         };
 
@@ -63,7 +65,9 @@ public static class SaveSystem
 
         GameManager.Instance.pride = data.pride;
         GameManager.Instance.prejudice = data.prejudice;
+        // Dentro do LoadGame() do SaveSystem:
         GameManager.Instance.relationships.Clear();
+        GameManager.Instance.savedDialogueIndex = data.dialogueIndex;
 
         foreach (var relData in data.relationships)
         {

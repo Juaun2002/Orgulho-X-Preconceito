@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement; // 🔥 ADICIONADO para podermos ler o nome da cena atual!
+using System.IO;
 
 /// <summary>
 /// Singleton GameManager to hold game state: pride, prejudice, and relationships.
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
     [Range(0f, 100f)]
     public float prejudice = 50f;
 
-    public int savedDialogueIndex;
+    public int savedDialogueIndex = 0;
 
     // Relationships: NPC name -> relationship value (0-100)
     public Dictionary<string, float> relationships = new Dictionary<string, float>();
@@ -25,18 +27,77 @@ public class GameManager : MonoBehaviour
     public Action<float, float> OnStatsChanged;
     public Action<string, float> OnRelationshipChanged;
 
+    public void ResetarParaNovoJogo()
+    {
+        pride = 50f;
+        prejudice = 50f;
+        savedDialogueIndex = 0;
+        
+        if (relationships != null)
+        {
+            relationships.Clear();
+        }
+
+        // Se você ainda usar aquele evento para atualizar as barrinhas da UI:
+        OnStatsChanged?.Invoke(50f, 50f);
+        
+        Debug.Log("🔄 GameManager: Status resetados para um Novo Jogo!");
+    }
 
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
+        // Lógica do Singleton para torná-lo imortal
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // 🔥 O SEGREDO ESTÁ AQUI:
+            // Assim que o GameManager nasce, ele checa o arquivo.
+            VerificarOuCarregarSave();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void VerificarOuCarregarSave()
+    {
+        string savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+
+        if (File.Exists(savePath))
+        {
+            // 💾 CORRIGIDO: Se o arquivo existe, nós resgatamos as informações salvas!
+            try
+            {
+                string jsonText = File.ReadAllText(savePath);
+                DadosDoSave dados = JsonUtility.FromJson<DadosDoSave>(jsonText);
+
+                this.pride = dados.pride;
+                this.prejudice = dados.prejudice;
+                this.savedDialogueIndex = dados.savedDialogueIndex;
+                
+                // Atualiza a UI com os dados carregados do save antigo
+                OnStatsChanged?.Invoke(pride, prejudice);
+
+                Debug.Log($"💾 GameManager: Progresso carregado com sucesso! Orgulho: {pride}, Preconceito: {prejudice}");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("🚨 Erro ao tentar ler o arquivo de save antigo: " + ex.Message);
+            }
+        }
+        else
+        {
+            // 🔥 SE O ARQUIVO NÃO EXISTE (Novo Jogo):
+            // Forçamos os valores iniciais perfeitos aqui na raiz!
+            pride = 50f;
+            prejudice = 50f;
+            savedDialogueIndex = 0;
+            if (relationships != null) relationships.Clear();
+
+            Debug.Log("🔄 GameManager: Nenhum arquivo encontrado (Novo Jogo). Status definidos para 50/50!");
         }
     }
 
@@ -71,14 +132,42 @@ public class GameManager : MonoBehaviour
         // Notify listeners about stats change
         OnStatsChanged?.Invoke(pride, prejudice);
 
-        // Persist current state using static SaveSystem if available
+        // 🔥 MODIFICADO: Agora salvamos os dados injetando o nome da cena atual!
         try
         {
-            SaveSystem.SaveGame(savedDialogueIndex);
+            SalvarProgressoAtual();
         }
         catch (Exception ex)
         {
-            Debug.LogWarning("SaveSystem.SaveGame threw: " + ex.Message);
+            Debug.LogWarning("Erro ao tentar salvar o jogo: " + ex.Message);
         }
+    }
+
+    // 🔥 NOVA FUNÇÃO AUXILIAR: Junta tudo o que precisamos salvar e escreve no JSON
+    private void SalvarProgressoAtual()
+    {
+        string savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+
+        DadosDoSave novosDados = new DadosDoSave();
+        novosDados.pride = this.pride;
+        novosDados.prejudice = this.prejudice;
+        novosDados.savedDialogueIndex = this.savedDialogueIndex;
+        
+        // 🎬 Captura o nome exato da cena em que o jogador está pisando agora!
+        novosDados.cenaSalva = SceneManager.GetActiveScene().name;
+
+        string json = JsonUtility.ToJson(novosDados, true);
+        File.WriteAllText(savePath, json);
+
+        Debug.Log($"📝 Jogo Salvo automaticamente na cena: {novosDados.cenaSalva}");
+    }
+
+    [System.Serializable]
+    public class DadosDoSave
+    {
+        public float pride;
+        public float prejudice;
+        public int savedDialogueIndex;
+        public string cenaSalva; 
     }
 }

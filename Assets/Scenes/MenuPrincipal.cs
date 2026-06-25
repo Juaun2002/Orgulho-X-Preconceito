@@ -20,8 +20,27 @@ public class MenuPrincipal : MonoBehaviour
     // 2. Método que será chamado quando o jogador clicar em "NOVO JOGO"
     public void Jogar()
     {
-    
-        SceneManager.LoadScene("SampleScene");
+    // Deleta o arquivo físico para garantir que não haja trapaça de carregamento
+        string savePath = System.IO.Path.Combine(Application.persistentDataPath, "savegame.json");
+        if (System.IO.File.Exists(savePath))
+        {
+            System.IO.File.Delete(savePath);
+        }
+
+        if (GameManager.Instance != null)
+        {
+            // Força os valores limpos no Singleton que está na memória
+            GameManager.Instance.pride = 50f;
+            GameManager.Instance.prejudice = 50f;
+            GameManager.Instance.savedDialogueIndex = 0;
+            GameManager.Instance.relationships.Clear();
+
+            // precisamos avisar para ela que os pontos voltaram para 50!
+            GameManager.Instance.OnStatsChanged?.Invoke(50f, 50f);
+        }
+
+        // Carrega a cena do jogo
+        SceneManager.LoadScene("SampleScene"); 
     }
 
     // 3. Método para fechar o jogo (pode usar no botão Sair, se criar um)

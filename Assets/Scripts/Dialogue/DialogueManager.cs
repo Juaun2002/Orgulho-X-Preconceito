@@ -26,37 +26,18 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typewriterCoroutine;
     private bool isDialogueActive = false; // Controla se existe uma conversa rodando
 
-private void Start()
+    private void Start()
     {
-        // 🛡️ TRAVA DE SEGURANÇA: Verifica se o GameManager existe antes de tentar usá-lo
-        if (GameManager.Instance != null)
-        {
-            if (GameManager.Instance.savedDialogueIndex == 0)
-            {
-                GameManager.Instance.pride = 50f;
-                GameManager.Instance.prejudice = 50f;
-                GameManager.Instance.relationships.Clear();
-                GameManager.Instance.OnStatsChanged?.Invoke(50f, 50f);
-            }
-            else
-            {
-                // Reseta o índice para 0 pois é uma nova cena
-                GameManager.Instance.savedDialogueIndex = 0;
-            }
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ GameManager não encontrado (você abriu a cena direto?). Rodando em modo de teste!");
-        }
+        // Removemos todo o bloco que mexia nos pontos (pride/prejudice)!
+        // Agora o DialogueManager foca APENAS em iniciar as falas da cena.
 
-        // Se houverem falas arrastadas na lista nova, inicia o diálogo automaticamente
         if (chapterLines != null && chapterLines.Count > 0)
         {
             StartDialogue(chapterLines.ToArray());
         }
         else
         {
-            Debug.LogError("🚨 ERRO: A lista 'Chapter Lines' está vazia! Arraste os arquivos .asset para lá.");
+            Debug.LogError("🚨 ERRO: A lista 'Chapter Lines' está vazia nesta cena!");
         }
     }
 
@@ -212,6 +193,22 @@ private void Start()
 
     private void OnChoiceSelected(ChoiceData choice)
         {
+            // 🛡️ Alarme de segurança 1
+            if (choice == null)
+            {
+                Debug.LogError("🚨 ERRO: Os dados da escolha (ChoiceData) vieram NULOS do botão!");
+                return;
+            }
+
+        // 🛡️ Alarme de segurança 2
+            if (GameManager.Instance == null)
+            {
+                Debug.LogError("🚨 ERRO: O GameManager.Instance está NULO! O GameManager imortal sumiu ou não foi encontrado!");
+                return;
+            }
+
+            Debug.Log($"Escolha selecionada: {choice.choiceText}. Aplicando efeitos no GameManager...");
+            
             HideChoices();
     
             // Apply the choice effects to GameManager
@@ -226,23 +223,25 @@ private void Start()
         DisplayLine();
     }
 
-   private void EndDialogue()
+  private void EndDialogue()
     {
         isDialogueActive = false;
         speakerText.text = "";
         dialogueText.text = "";
         portraitImage.sprite = null;
         HideChoices();
-        Debug.Log("Dialogue ended.");
 
-    
         if (!string.IsNullOrEmpty(nextSceneToLoad))
         {
+            // 🔥 ADICIONADO AQUI: Zeramos o índice ANTES de mudar de cena.
+            // Assim, a próxima cena sabe que deve começar da primeira fala (0) 
+            // sem precisar mexer nos pontos de orgulho/preconceito!
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.savedDialogueIndex = 0;
+            }
+
             SceneManager.LoadScene(nextSceneToLoad);
-        }
-        else
-        {
-            Debug.LogWarning("O nome da próxima cena está vazio no Inspector!");
         }
     }
 }

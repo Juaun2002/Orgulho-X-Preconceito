@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Importante para gerenciar botões
+using UnityEngine.UI; 
+using System.IO; // 🔥 ADICIONADO: Necessário para usar Path, File.Exists e File.ReadAllText!
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,64 +14,61 @@ public class MenuManager : MonoBehaviour
         if (continuarBotao != null)
         {
             // O botão CONTINUAR só fica clicável se o arquivo de save já existir no PC do jogador!
-            continuarBotao.interactable = System.IO.File.Exists(System.IO.Path.Combine(Application.persistentDataPath, "savegame.json"));
+            continuarBotao.interactable = File.Exists(Path.Combine(Application.persistentDataPath, "savegame.json"));
         }
     }
 
     public void NovoJogo()
     {
-        // Deleta o arquivo físico para garantir que não haja trapaça de carregamento
-        string savePath = System.IO.Path.Combine(Application.persistentDataPath, "savegame.json");
-        if (System.IO.File.Exists(savePath))
+        // Deleta o arquivo físico para garantir um começo limpo
+        string savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+        if (File.Exists(savePath))
         {
-            System.IO.File.Delete(savePath);
+            File.Delete(savePath);
         }
 
         if (GameManager.Instance != null)
         {
             // Força os valores limpos no Singleton que está na memória
-            GameManager.Instance.pride = 50f;
-            GameManager.Instance.prejudice = 50f;
-            GameManager.Instance.savedDialogueIndex = 0;
-            GameManager.Instance.relationships.Clear();
-
-            // precisamos avisar para ela que os pontos voltaram para 50!
-            GameManager.Instance.OnStatsChanged?.Invoke(50f, 50f);
+            GameManager.Instance.ResetarParaNovoJogo();
         }
 
-        // Carrega a cena do jogo
+        // Carrega a cena inicial do jogo
         SceneManager.LoadScene("SampleScene"); 
     }
 
     public void ContinuarJogo()
     {
-        // Tenta carregar os dados salvos no JSON
-        bool sucesso = SaveSystem.LoadGame();
+        string savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
 
-        if (sucesso)
+        if (File.Exists(savePath))
         {
-            Debug.Log("Save carregado com sucesso! Iniciando a cena...");
-            // Carrega a cena do jogo com os pontos antigos já restaurados no GameManager
-            SceneManager.LoadScene("SampleScene"); 
+            // 1. Lê o texto bruto do arquivo de save
+            string jsonText = File.ReadAllText(savePath);
+
+            // 2. Converte temporariamente para ler o nome da cena guardada
+            // Usamos 'GameManager.DadosDoSave' porque a classe está declarada dentro do GameManager!
+            GameManager.DadosDoSave dados = JsonUtility.FromJson<GameManager.DadosDoSave>(jsonText);
+
+            // 3. Valida se o nome da cena não veio vazio por segurança
+            if (dados != null && !string.IsNullOrEmpty(dados.cenaSalva))
+            {
+                Debug.Log($"💾 Carregando save! Indo para a cena: {dados.cenaSalva}");
+                SceneManager.LoadScene(dados.cenaSalva);
+            }
+            else
+            {
+                // Caso o arquivo exista mas não tenha o nome da cena, vai para a padrão
+                Debug.LogWarning("⚠️ Arquivo de save encontrado, mas sem nome de cena. Indo para a SampleScene.");
+                SceneManager.LoadScene("SampleScene");
+            }
         }
         else
         {
-            Debug.LogError("Erro crítico: Arquivo de save não encontrado.");
+            Debug.LogWarning("❌ Nenhum arquivo de save encontrado para continuar!");
         }
-    }
-
-    // Função que o botão de Salvar vai chamar na SampleScene
-    public void BotaoSalvarJogo(int currentLine)
-    {
-        // Chama a linha mágica que converte os pontos atuais do GameManager em JSON
-        SaveSystem.SaveGame(currentLine); // Você pode passar o índice atual do diálogo se quiser salvar isso também
-        
-        Debug.Log("Jogo salvo manualmente pelo jogador!");
-        
-        // (Opcional) Se você tiver algum textinho de "Jogo Salvo!" piscando na tela, 
-       
     }
 
     public void IrParaCreditos() => SceneManager.LoadScene("Final");
     public void VoltarParaMenu() => SceneManager.LoadScene("MainMenu");
-} 
+}

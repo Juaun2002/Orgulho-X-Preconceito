@@ -19,29 +19,63 @@ public class DialogueManager : MonoBehaviour
     public Transform choiceButtonContainer;
     // Uma lista que vai guardar todas as falas do capítulo atual nesta cena
     public System.Collections.Generic.List<DialogueLine> chapterLines;
+    public string nextSceneToLoad;
 
     private DialogueLine[] dialogueLines;
     private int currentLineIndex = 0;
     private Coroutine typewriterCoroutine;
     private bool isDialogueActive = false; // Controla se existe uma conversa rodando
 
-    private void Start()
+private void Start()
     {
-        // Se o savedDialogueIndex for 0, significa que é um JOGO NOVO legítimo
-        if (GameManager.Instance.savedDialogueIndex == 0)
+        // 🛡️ TRAVA DE SEGURANÇA: Verifica se o GameManager existe antes de tentar usá-lo
+        if (GameManager.Instance != null)
         {
-            GameManager.Instance.pride = 50f;
-            GameManager.Instance.prejudice = 50f;
-            GameManager.Instance.relationships.Clear();
-            
-            // Atualiza o texto/barra da UI para mostrar 50 de verdade
-            GameManager.Instance.OnStatsChanged?.Invoke(50f, 50f);
+            if (GameManager.Instance.savedDialogueIndex == 0)
+            {
+                GameManager.Instance.pride = 50f;
+                GameManager.Instance.prejudice = 50f;
+                GameManager.Instance.relationships.Clear();
+                GameManager.Instance.OnStatsChanged?.Invoke(50f, 50f);
+            }
+            else
+            {
+                // Reseta o índice para 0 pois é uma nova cena
+                GameManager.Instance.savedDialogueIndex = 0;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("⚠️ GameManager não encontrado (você abriu a cena direto?). Rodando em modo de teste!");
         }
 
+        // Se houverem falas arrastadas na lista nova, inicia o diálogo automaticamente
         if (chapterLines != null && chapterLines.Count > 0)
         {
             StartDialogue(chapterLines.ToArray());
         }
+        else
+        {
+            Debug.LogError("🚨 ERRO: A lista 'Chapter Lines' está vazia! Arraste os arquivos .asset para lá.");
+        }
+    }
+
+    public void StartDialogue(DialogueLine[] lines)
+    {
+        dialogueLines = lines;
+        
+        // 🛡️ TRAVA DE SEGURANÇA para o índice da fala
+        if (GameManager.Instance != null)
+        {
+            currentLineIndex = GameManager.Instance.savedDialogueIndex; 
+        }
+        else
+        {
+            currentLineIndex = 0; // Se não tem GameManager, começa da fala 0
+        }
+        
+        isDialogueActive = true; 
+        DisplayLine();
     }
 
     private void Update()
@@ -57,13 +91,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(DialogueLine[] lines)
-    {
-        dialogueLines = lines;
-        currentLineIndex = GameManager.Instance.savedDialogueIndex;
-        isDialogueActive = true; // Ativa o controle de cliques
-        DisplayLine();
-    }
 
     private void DisplayLine()
     {
@@ -114,7 +141,13 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowChoices(ChoiceData[] choices)
     {
+        // 🚨 ALARMES PARA DESCOBRIR O QUE ESTÁ VAZIO NA CENA ATUAL:
+        if (choicePanel == null) { Debug.LogError("🚨 ALARME: FALTOU colocar o 'Choice Panel' no Inspector do DialogueManager nesta cena!"); return; }
+        if (choiceButtonContainer == null) { Debug.LogError("🚨 ALARME: FALTOU colocar o 'Choice Button Container' no Inspector do DialogueManager nesta cena!"); return; }
+        if (choiceButtonPrefab == null) { Debug.LogError("🚨 ALARME: FALTOU colocar o 'Choice Button Prefab' no Inspector do DialogueManager nesta cena!"); return; }
+
         choicePanel.SetActive(true);
+        
         // Clear existing choice buttons
         foreach (Transform child in choiceButtonContainer)
         {
@@ -130,10 +163,14 @@ public class DialogueManager : MonoBehaviour
             // Pega o componente de texto do botão e coloca o texto correto do JSON
             TextMeshProUGUI buttonText = btnObj.GetComponentInChildren<TextMeshProUGUI>();
             if (buttonText != null)
-                {
-            // Usando 'choiceText' que bate com o seu JSON!
+            {
+                // Usando 'choiceText' que bate com o seu JSON!
                 buttonText.text = choice.choiceText; 
-                }
+            }
+            else 
+            {
+                Debug.LogError("🚨 ALARME: O seu Choice Button Prefab não tem um componente de texto 'TextMeshProUGUI'!");
+            }
 
             // ADICIONADO: Configura o botão para acionar a função OnChoiceSelected ao ser clicado
             Button btnComponent = btnObj.GetComponent<Button>();
@@ -141,9 +178,12 @@ public class DialogueManager : MonoBehaviour
             {
                 btnComponent.onClick.AddListener(() => OnChoiceSelected(choice));
             }
+            else 
+            {
+                Debug.LogError("🚨 ALARME: O seu Choice Button Prefab não tem um componente 'Button'!");
+            }
         }
     }
-
     /// <summary>
     /// Called by PlayerController when player clicks/presses space.
     /// Skips typewriter or advances to next line if text is already displayed.
@@ -186,18 +226,23 @@ public class DialogueManager : MonoBehaviour
         DisplayLine();
     }
 
-    private void EndDialogue()
+   private void EndDialogue()
     {
-        // Hide dialogue UI
-        isDialogueActive = false; // Desativa o controle de cliques pois acabou
+        isDialogueActive = false;
         speakerText.text = "";
         dialogueText.text = "";
         portraitImage.sprite = null;
         HideChoices();
-        // Optionally, trigger next event (e.g., load next scene, enable player movement)
         Debug.Log("Dialogue ended.");
 
-        // 2. LINHA MÁGICA: Carrega a nova cena de encerramento automaticamente!
-        SceneManager.LoadScene("Final");
+    
+        if (!string.IsNullOrEmpty(nextSceneToLoad))
+        {
+            SceneManager.LoadScene(nextSceneToLoad);
+        }
+        else
+        {
+            Debug.LogWarning("O nome da próxima cena está vazio no Inspector!");
+        }
     }
 }

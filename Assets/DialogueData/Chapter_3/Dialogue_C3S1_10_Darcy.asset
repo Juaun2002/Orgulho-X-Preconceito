@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: Fui educado para isso.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 416ed86a3600ee24dae0baae5756e419, type: 3}
   choices: []

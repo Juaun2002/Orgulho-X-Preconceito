@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Minha fam\xEDlia est\xE1 em grave situa\xE7\xE3o. Lydia... e Wickham. Eu
     sei que o senhor tem raz\xF5es para n\xE3o se importar com nenhum de n\xF3s."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: c19d00318c3851140846e36c7d7b42a4, type: 3}
   choices: []

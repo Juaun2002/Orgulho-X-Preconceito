@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Ent\xE3o espero que os livros daqui tenham senso de humor. As salas de recep\xE7\xE3o
     de Rosings parecem levar a si mesmas muito a s\xE9rio."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 75191ba092b773843ab629d036d0939e, type: 3}
   choices: []

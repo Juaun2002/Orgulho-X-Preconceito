@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: Sombras? Relacionadas ao Sr. Darcy, talvez?
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 795f7b7f584c0944dbde32378a698946, type: 3}
   choices: []

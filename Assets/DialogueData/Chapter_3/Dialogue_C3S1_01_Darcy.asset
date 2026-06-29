@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "O coronel costuma dizer que uma boa biblioteca revela mais sobre uma pessoa
     do que uma sala de recep\xE7\xE3o."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 58e4fb1aff7b9bc4d838361c8590587e, type: 3}
   choices: []

@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     // Uma lista que vai guardar todas as falas do capítulo atual nesta cena
     public System.Collections.Generic.List<DialogueLine> chapterLines;
     public string nextSceneToLoad;
+    public AudioSource voiceAudioSource;
 
     private DialogueLine[] dialogueLines;
     private int currentLineIndex = 0;
@@ -85,10 +86,20 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        DialogueLine line = dialogueLines[currentLineIndex];
+        DialogueLine line = chapterLines[currentLineIndex];
         speakerText.text = line.speaker;
         portraitImage.sprite = line.portrait;
-        // Optionally play voice line here if you have an AudioSource
+        
+        if (voiceAudioSource != null)
+        {
+            voiceAudioSource.Stop(); // 1. Para a voz anterior imediatamente (evita que as vozes se atropelem)
+
+            if (line.voiceLine != null)
+            {
+                voiceAudioSource.clip = line.voiceLine; // 2. Coloca o áudio da fala atual
+                voiceAudioSource.Play();               // 3. Toca a dublagem!
+            }
+        }
 
         // Stop any ongoing typewriter effect
         if (typewriterCoroutine != null)
@@ -231,11 +242,10 @@ public class DialogueManager : MonoBehaviour
         portraitImage.sprite = null;
         HideChoices();
 
+        if (voiceAudioSource != null) voiceAudioSource.Stop();
+
         if (!string.IsNullOrEmpty(nextSceneToLoad))
         {
-            // 🔥 ADICIONADO AQUI: Zeramos o índice ANTES de mudar de cena.
-            // Assim, a próxima cena sabe que deve começar da primeira fala (0) 
-            // sem precisar mexer nos pontos de orgulho/preconceito!
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.savedDialogueIndex = 0;

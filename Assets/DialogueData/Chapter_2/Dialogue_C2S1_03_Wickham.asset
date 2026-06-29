@@ -17,5 +17,5 @@ MonoBehaviour:
   text: Bem, obrigado. Embora meu passado carregue algumas sombras que preferiria
     esquecer.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: da6c31eb9c8e57c4787ffa2f23f189a5, type: 3}
   choices: []

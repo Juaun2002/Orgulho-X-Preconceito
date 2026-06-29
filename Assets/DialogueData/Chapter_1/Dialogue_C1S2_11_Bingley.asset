@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Bingley
   text: "Quem \xE9 aquela jovem de vestido azul? Parece bastante inteligente."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 3ca01ebd052fed74291cc8546a8f0f10, type: 3}
   choices: []

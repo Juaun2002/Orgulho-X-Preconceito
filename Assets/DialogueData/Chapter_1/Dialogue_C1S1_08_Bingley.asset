@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Bingley
   text: "\xC9 justamente esse o prop\xF3sito de um baile, meu caro. Conhecer pessoas."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 3fcd6d244fc30ee4d8974dbfe54559f7, type: 3}
   choices: []

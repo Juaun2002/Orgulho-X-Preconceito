@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: ...Talvez.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 9bae67157b86c31419af288f39766cbd, type: 3}
   choices: []

@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: "N\xE3o diga isso. N\xE3o \xE9 assim que me sinto."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 2e29b7afd44282c4d814d79cd742e88c, type: 3}
   choices: []

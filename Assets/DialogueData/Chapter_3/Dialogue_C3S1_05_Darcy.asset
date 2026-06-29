@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: E a senhora? Ganha algo?
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: aa5bce11a09d4624496357edccaee799, type: 3}
   choices: []

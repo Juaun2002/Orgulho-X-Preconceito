@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: "\xC9 raro encontrar algu\xE9m que fale sem calcular a impress\xE3o causada."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: f1daecef522a2d9458e874cbc169a483, type: 3}
   choices: []

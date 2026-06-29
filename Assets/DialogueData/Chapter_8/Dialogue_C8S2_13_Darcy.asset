@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: Talvez tenhamos aprendido igualmente.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 40d52bb8eccd8ba4daf053d016d28829, type: 3}
   choices: []

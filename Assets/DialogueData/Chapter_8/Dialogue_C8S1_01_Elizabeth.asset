@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Falo? \xC9 poss\xEDvel."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: bcb53a8b9788a5d4aa7ade8b66fed128, type: 3}
   choices: []

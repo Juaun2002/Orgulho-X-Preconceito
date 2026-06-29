@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: "N\xE3o sei ao certo. Mas h\xE1 algo em seu olhar que chama a aten\xE7\xE3o."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: c668d43e62678bb468f755538ea9de49, type: 3}
   choices: []

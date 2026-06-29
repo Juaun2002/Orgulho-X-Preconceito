@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Wickham
   text: "Srta. Bennet, \xE9 sempre um prazer encontr\xE1-la nas ruas de Meryton."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: b91835297f4954e4eb5df45c30544df3, type: 3}
   choices: []

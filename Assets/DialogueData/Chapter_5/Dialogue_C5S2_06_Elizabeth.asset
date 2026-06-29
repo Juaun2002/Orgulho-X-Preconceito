@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "...n\xE3o. N\xE3o acreditei. E isso me envergonha mais do que qualquer outra
     coisa que j\xE1 fiz."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 53a02d2d72a890c4ca80e35752eb98d2, type: 3}
   choices: []

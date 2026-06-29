@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Eles mudaram completamente. Eu o julguei sem conhec\xEA-lo. Constru\xED
     uma imagem e me recusei a enxergar al\xE9m dela."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 95a747edea560654aaff377aea2fbcf3, type: 3}
   choices: []

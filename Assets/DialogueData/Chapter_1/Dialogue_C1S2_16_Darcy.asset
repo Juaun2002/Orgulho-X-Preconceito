@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: Tenho o costume de pensar antes de falar. Considero isso uma virtude.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: d45cd73fe1d160d45aaeb27cddb5b1aa, type: 3}
   choices: []

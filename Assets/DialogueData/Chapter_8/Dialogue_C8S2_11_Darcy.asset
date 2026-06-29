@@ -17,7 +17,7 @@ MonoBehaviour:
   text: "E eu tornei f\xE1cil que me julgassem. Fui orgulhoso onde devia ser gentil,
     reservado onde devia ser honesto."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 80f0948be2bfb5c41b43e0199ad6f56e, type: 3}
   choices:
   - choiceText: "[CAN\xD4NICA] Talvez tenhamos errado igualmente. E talvez possamos
       aprender juntos."

@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: O senhor calcula a sua o tempo todo.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: b52f6d499a15be74b9949b82c3c553ff, type: 3}
   choices: []

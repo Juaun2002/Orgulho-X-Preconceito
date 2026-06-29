@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: Talvez possua. Mais do que eu soube reconhecer.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 5bff4919f703f0d4b95ea1fdd081fcca, type: 3}
   choices: []

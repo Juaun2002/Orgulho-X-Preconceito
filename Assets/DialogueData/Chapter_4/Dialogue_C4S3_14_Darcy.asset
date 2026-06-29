@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: Fico satisfeito em ouvir isso.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: f06cd392eeed3c846a425dafaa99b4ee, type: 3}
   choices: []

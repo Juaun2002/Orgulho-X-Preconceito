@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "O senhor \xE9 muito silencioso para um homem que acabou de aceitar dan\xE7ar."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: daaf09bae2319b540b78d15a0bd4fa00, type: 3}
   choices: []

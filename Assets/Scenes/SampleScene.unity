@@ -504,7 +504,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe94422c1b6e1494e94d18febea9a052, type: 2}
   - {fileID: 11400000, guid: eb423202e8a4edc458d1a08c15e42434, type: 2}
   - {fileID: 11400000, guid: 5fcbd973e73dfc34d88a29b1ba2febea, type: 2}
-  - {fileID: 11400000, guid: a3855fc4fadbceb4b9da3fc74114d08f, type: 2}
+  - {fileID: 11400000, guid: 64a68236198b3c941a2bfadb2823a793, type: 2}
   - {fileID: 11400000, guid: d2972557af2d361479cbec392b6cff5b, type: 2}
   - {fileID: 11400000, guid: 0e8d6e02a0cfd4744a4b00ae74477742, type: 2}
   - {fileID: 11400000, guid: 3149e6f3e65b2e547bf5c2b3094d2650, type: 2}
@@ -518,6 +518,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c843e1379feb28342827031f9bf0b928, type: 2}
   - {fileID: 11400000, guid: 7107ba1c90e83ae47b4baeba95cf3a59, type: 2}
   nextSceneToLoad: SampleScene_2
+  voiceAudioSource: {fileID: 0}
 --- !u!4 &332440428
 Transform:
   m_ObjectHideFlags: 0
@@ -1556,7 +1557,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 48dd69c2677c73e4c83cd51edb2dfe00, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.295
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2045,6 +2046,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.14618164
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 2418d759e5ab461449f49379212a3faa, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e77e0288e6e6b5547af23c77c60c5b0e, type: 2}
     - target: {fileID: 5159078012444724336, guid: 2418d759e5ab461449f49379212a3faa, type: 3}
       propertyPath: m_LocalScale.x
       value: 300
@@ -2406,6 +2411,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.12381837
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 19bf38c0a3489d04aabfd7232d8e2870, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2f355dfc37e0fd743a777c2055aa8d8e, type: 2}
     - target: {fileID: 5159078012444724336, guid: 19bf38c0a3489d04aabfd7232d8e2870, type: 3}
       propertyPath: m_LocalScale.x
       value: 300
@@ -3113,6 +3122,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.1308533
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 5e466d72a7e9931478a92141041ff797, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 54ad28b9368ee2a4e850d3b0758b5c71, type: 2}
     - target: {fileID: 5159078012444724336, guid: 5e466d72a7e9931478a92141041ff797, type: 3}
       propertyPath: m_LocalScale.x
       value: 300
@@ -4143,6 +4156,7 @@ SceneRoots:
   - {fileID: 365866959}
   - {fileID: 1323448690}
   - {fileID: 1270430976}
+  - {fileID: 1701277441}
   - {fileID: 1863303169}
   - {fileID: 1477238041}
   - {fileID: 986014046}
@@ -4153,4 +4167,3 @@ SceneRoots:
   - {fileID: 1098151045}
   - {fileID: 333332734}
   - {fileID: 81316348}
-  - {fileID: 1701277441}

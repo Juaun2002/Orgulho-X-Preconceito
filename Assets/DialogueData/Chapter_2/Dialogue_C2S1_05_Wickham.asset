@@ -17,7 +17,7 @@ MonoBehaviour:
   text: "Infelizmente sim. Meu pai serviu a fam\xEDlia Darcy por toda a vida. E uma
     promessa que me foi feita... foi quebrada."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: bda2b7c625e167742a83915f1e866801, type: 3}
   choices:
   - choiceText: "[S\xC1BIA] Gostaria de ouvir ambos os lados antes de concluir qualquer
       coisa."

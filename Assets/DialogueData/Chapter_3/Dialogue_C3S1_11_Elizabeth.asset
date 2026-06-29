@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: E nunca desejou ser educado para outra coisa?
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 2c903b2a3aa61fa418b1c93e49e86890, type: 3}
   choices: []

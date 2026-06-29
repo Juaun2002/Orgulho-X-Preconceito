@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Ent\xE3o farei o que sempre fiz quando descubro um erro."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 867f24e0dcccbb148a14453183043f89, type: 3}
   choices: []

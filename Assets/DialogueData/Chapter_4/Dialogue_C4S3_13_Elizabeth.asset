@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Ao contr\xE1rio. Creio que n\xE3o poderia ser mais... oportuna."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 9e3024ea77cf270498c4cbc8e11500c7, type: 3}
   choices: []

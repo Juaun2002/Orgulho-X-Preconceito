@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Ele \xE9 pr\xF3ximo da fam\xEDlia?"
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 3a02ba803944003488c164cf036d99dd, type: 3}
   choices: []

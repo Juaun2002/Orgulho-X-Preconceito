@@ -17,5 +17,5 @@ MonoBehaviour:
   text: E eu tenho o costume de falar para descobrir o que penso. Talvez ambos tenhamos
     algo a aprender.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 7de74c1fdfbfaca458cbdce6be8b7ca1, type: 3}
   choices: []

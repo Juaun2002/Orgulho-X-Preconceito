@@ -119,7 +119,7 @@ public class DialogueDataLoader : MonoBehaviour
                         dialogueLine.speaker = lineData.speaker;
                         dialogueLine.text = lineData.text;
                         dialogueLine.portrait = null; 
-                        dialogueLine.voice = null; 
+                        dialogueLine.voiceLine = null; 
 
                         // Convert choices
                         if (lineData.choices != null && lineData.choices.Length > 0)

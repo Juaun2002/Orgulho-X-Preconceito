@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: Talvez tenhamos errado igualmente.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: ef961e75c4705e148b4868ac688dbe06, type: 3}
   choices: []

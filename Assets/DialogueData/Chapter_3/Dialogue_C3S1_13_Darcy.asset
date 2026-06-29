@@ -16,7 +16,7 @@ MonoBehaviour:
   speaker: Darcy
   text: Talvez esteja desejando agora.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: cec8e32974789944487ef015fdce751f, type: 3}
   choices:
   - choiceText: "[CAN\xD4NICA] Ent\xE3o comece dizendo o que realmente pensa. Sem
       o peso das expectativas."

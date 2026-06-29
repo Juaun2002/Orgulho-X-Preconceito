@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Paz de esp\xEDrito."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: b810e07f3de19e648b751d623e225375, type: 3}
   choices: []

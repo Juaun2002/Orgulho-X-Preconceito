@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Estou apenas percebendo que algumas pessoas s\xE3o mais dif\xEDceis de compreender
     do que imaginei \u2014 e que eu as julgava de um lugar muito raso."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 6c8d11b4c07c27346864f2733fc63fb6, type: 3}
   choices: []

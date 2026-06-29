@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: "H\xE1 muitas pessoas que n\xE3o conhe\xE7o."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: a33650a9a444777409754c4b8b11f73a, type: 3}
   choices: []

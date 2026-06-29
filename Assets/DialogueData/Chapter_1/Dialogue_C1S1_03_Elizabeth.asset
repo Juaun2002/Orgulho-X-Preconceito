@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Ou talvez seja apenas uma noite de dan\xE7a e boa m\xFAsica."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 8143f86230e86044da9c864971a0a951, type: 3}
   choices: []

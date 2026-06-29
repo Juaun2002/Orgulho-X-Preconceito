@@ -16,7 +16,7 @@ MonoBehaviour:
   speaker: Bingley
   text: "Venha, dance com ela. Ser\xE1 agrad\xE1vel."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 56905da8a8f817942b322fcf06aee199, type: 3}
   choices:
   - choiceText: "[CAN\xD4NICA] Talvez voc\xEA tenha raz\xE3o. Ela parece digna de
       uma conversa."

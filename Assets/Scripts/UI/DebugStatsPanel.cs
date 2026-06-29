@@ -53,8 +53,12 @@ public class DebugStatsPanel : MonoBehaviour
     public void UpdateUI()
     {
         if (GameManager.Instance == null) return;
-        if (prideText != null) prideText.text = "Pride: " + GameManager.Instance.pride.ToString("0");
-        if (prejudiceText != null) prejudiceText.text = "Prejudice: " + GameManager.Instance.prejudice.ToString("0");
+        
+        if (prideText != null) 
+            prideText.text = "Orgulho: " + GameManager.Instance.pride.ToString("0");
+            
+        if (prejudiceText != null) 
+            prejudiceText.text = "Preconceito: " + GameManager.Instance.prejudice.ToString("0");
     }
 
     public void SimulateChoice(float prideDelta, float prejudiceDelta)

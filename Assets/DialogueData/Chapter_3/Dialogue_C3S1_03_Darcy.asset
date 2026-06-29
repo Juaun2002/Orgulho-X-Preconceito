@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: Poucos ousariam dizer isso em voz alta.
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 5f9f22b97ba8d2541b95f2e69bf1b4ef, type: 3}
   choices: []

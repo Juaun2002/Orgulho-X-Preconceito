@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Bingley
   text: "Veja s\xF3, Darcy! O sal\xE3o est\xE1 cheio. Vamos nos divertir esta noite."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 661b8dd274fcaaa4596acce6190d54f2, type: 3}
   choices: []

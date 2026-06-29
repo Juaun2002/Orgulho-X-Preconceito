@@ -18,5 +18,5 @@ MonoBehaviour:
     tinham quando me rejeitou, n\xE3o falarei mais sobre este assunto. Mas se houver
     qualquer possibilidade..."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: a4df958d46a2e5040938339bfc205884, type: 3}
   choices: []

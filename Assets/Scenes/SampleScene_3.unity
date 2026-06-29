@@ -620,6 +620,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 63610113eaed94d479bb79b27d233a4f, type: 2}
   - {fileID: 11400000, guid: 0d6da9c787293c045813b4529955998d, type: 2}
   nextSceneToLoad: SampleScene_4
+  voiceAudioSource: {fileID: 0}
 --- !u!4 &414743601
 Transform:
   m_ObjectHideFlags: 0
@@ -1882,6 +1883,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.1324908
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c72f227040b772845a2dc7114b9b70d3, type: 2}
     - target: {fileID: 5159078012444724336, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
       propertyPath: m_LocalScale.x
       value: 300
@@ -2920,6 +2925,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.1746782
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a8c41832dc47b4e428849974837d2330, type: 2}
     - target: {fileID: 5159078012444724336, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
       propertyPath: m_LocalScale.x
       value: 300

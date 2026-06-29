@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Darcy
   text: "N\xE3o compartilho do seu entusiasmo por encontros fortuitos."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: c668d43e62678bb468f755538ea9de49, type: 3}
   choices: []

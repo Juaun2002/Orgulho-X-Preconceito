@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Poucos t\xEAm algo a ganhar sendo sinceros."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: e3ecbe04790080d448a94b7c8c35e0be, type: 3}
   choices: []

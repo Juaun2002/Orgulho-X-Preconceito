@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "Meus sentimentos n\xE3o s\xE3o os mesmos."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 74657b604aaa61748bede33b06e35fb4, type: 3}
   choices: []

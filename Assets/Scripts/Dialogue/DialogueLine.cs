@@ -11,6 +11,6 @@ public class DialogueLine : ScriptableObject
     [TextArea(3, 10)]
     public string text;
     public Sprite portrait;
-    public AudioClip voice;
-    public ChoiceData[] choices; // Optional: if null or empty, no choices shown
+    public AudioClip voiceLine;
+    public ChoiceData[] choices;
 }

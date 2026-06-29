@@ -17,5 +17,5 @@ MonoBehaviour:
   text: "Enquanto houver algo que eu possa fazer, existe esperan\xE7a. E h\xE1 algo
     que eu posso fazer."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 1d7f8c2fad63b6643a46acd08dae2af9, type: 3}
   choices: []

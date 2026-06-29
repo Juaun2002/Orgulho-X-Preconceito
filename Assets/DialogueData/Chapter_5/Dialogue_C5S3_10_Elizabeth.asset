@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "N\xE3o h\xE1 solu\xE7\xE3o \xE0 vista."
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 395928ca72b9d514bab2bcff0bbb842b, type: 3}
   choices: []

@@ -994,15 +994,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -738
+      value: -720
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1754
+      value: 1600
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 92734e467a347224bac85b70b8ef7aa2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1179,8 +1179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.25}
-  m_AnchoredPosition: {x: -807.36, y: 802.0254}
-  m_SizeDelta: {x: -1614.7, y: 15.9479}
+  m_AnchoredPosition: {x: -807.36, y: 805.99963}
+  m_SizeDelta: {x: -1614.7, y: 7.9993286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661565330
 MonoBehaviour:
@@ -2466,8 +2466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -807.36, y: 339.59}
-  m_SizeDelta: {x: 305.28, y: 171.08}
+  m_AnchoredPosition: {x: -807.36, y: 333.17}
+  m_SizeDelta: {x: 305.3, y: 142.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635106154
 MonoBehaviour:
@@ -2831,7 +2831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -588
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2839,7 +2839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1787
+      value: 1600
       objectReference: {fileID: 0}
     - target: {fileID: 5159078012444724336, guid: 0f0aa179b38ecc54bbd6a9ee78edf879, type: 3}
       propertyPath: m_LocalRotation.w

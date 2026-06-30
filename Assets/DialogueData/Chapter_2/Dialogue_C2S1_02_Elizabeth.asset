@@ -16,5 +16,5 @@ MonoBehaviour:
   speaker: Elizabeth
   text: "O prazer \xE9 meu, Sr. Wickham. Como tem passado?"
   portrait: {fileID: 0}
-  voice: {fileID: 0}
+  voiceLine: {fileID: 8300000, guid: 7ee4e5cd005bd4a408735de6dac61e36, type: 3}
   choices: []

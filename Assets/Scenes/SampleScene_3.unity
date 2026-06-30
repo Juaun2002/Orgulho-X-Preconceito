@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 286420895}
   - component: {fileID: 286420894}
   - component: {fileID: 286420893}
+  - component: {fileID: 286420897}
   m_Layer: 0
   m_Name: Botao_Save
   m_TagString: Untagged
@@ -504,10 +505,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162644097}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1902336409}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: BotaoSalvarJogo
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -575,6 +576,21 @@ RectTransform:
   m_AnchoredPosition: {x: 1770, y: 1027}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5000001, y: 0.5}
+--- !u!114 &286420897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286420892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584247f3b6a5b204d91b3d3be9fe7dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  pride: 50
+  prejudice: 50
+  savedDialogueIndex: 0
 --- !u!1 &414743599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,6 +3427,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1902336408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902336410}
+  - component: {fileID: 1902336409}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1902336409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902336408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa06e1becfc61174f9110a7d09e8e4b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  prideSlider: {fileID: 0}
+  prejudiceSlider: {fileID: 0}
+  npcStatusPrefab: {fileID: 0}
+  container: {fileID: 0}
+--- !u!4 &1902336410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902336408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1996124763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3643,6 +3707,7 @@ SceneRoots:
   - {fileID: 1225368136}
   - {fileID: 1777776810}
   - {fileID: 414743601}
+  - {fileID: 1902336410}
   - {fileID: 426960315}
   - {fileID: 1159777143}
   - {fileID: 1996124763}

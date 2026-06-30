@@ -94,4 +94,14 @@ public class UIManager : MonoBehaviour
             npcSliders[nome] = sliderAfinidade;
         }
     }
+
+        public void BotaoSalvarJogo()
+    {
+        if (GameManager.Instance != null)
+        {
+            // Pede para o GameManager o index atual e salva
+            SaveSystem.SaveGame(GameManager.Instance.savedDialogueIndex);
+            Debug.Log("💾 Jogo salvo manualmente pelo UIManager com sucesso!");
+        }
+    }
 }

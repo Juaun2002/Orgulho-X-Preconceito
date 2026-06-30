@@ -117,4 +117,6 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Erro ao tentar salvar o jogo: " + ex.Message);
         }
     }
+
+        
 }

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8928567339430498289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990688888249227996}
+  - component: {fileID: 1448599995497362480}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1990688888249227996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928567339430498289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1448599995497362480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928567339430498289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd3bfa8a7b267f43bf6e1101a2a6847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  speakerText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  portraitImage: {fileID: 0}
+  choicePanel: {fileID: 0}
+  choiceButtonPrefab: {fileID: 5951503911592620065, guid: 063ea1eb675461743a9de0f2003edc27, type: 3}
+  choiceButtonContainer: {fileID: 0}
+  chapterLines:
+  - {fileID: 11400000, guid: 489fa631bf38f284a996f821834e2274, type: 2}
+  - {fileID: 11400000, guid: ca24bbf73859336489250c0dc4a56e56, type: 2}
+  - {fileID: 11400000, guid: a0ba3925d89388843be35414c8d282d9, type: 2}
+  - {fileID: 11400000, guid: fe94422c1b6e1494e94d18febea9a052, type: 2}
+  - {fileID: 11400000, guid: eb423202e8a4edc458d1a08c15e42434, type: 2}
+  - {fileID: 11400000, guid: 5fcbd973e73dfc34d88a29b1ba2febea, type: 2}
+  - {fileID: 11400000, guid: 64a68236198b3c941a2bfadb2823a793, type: 2}
+  - {fileID: 11400000, guid: d2972557af2d361479cbec392b6cff5b, type: 2}
+  - {fileID: 11400000, guid: 0e8d6e02a0cfd4744a4b00ae74477742, type: 2}
+  - {fileID: 11400000, guid: 3149e6f3e65b2e547bf5c2b3094d2650, type: 2}
+  - {fileID: 11400000, guid: e4cdbd3e837fdb5479f4eec1ff9c885a, type: 2}
+  - {fileID: 11400000, guid: e5c3d036f87e9da42b66b31131029e73, type: 2}
+  - {fileID: 11400000, guid: 2f46879eac931f8429457a82584d1739, type: 2}
+  - {fileID: 11400000, guid: d21fff315e35aeb479fc945bb744d135, type: 2}
+  - {fileID: 11400000, guid: 425d56b101191f64caf3bd5c1cc27466, type: 2}
+  - {fileID: 11400000, guid: 0f8d82fdf2c136d43991401e98c7ac29, type: 2}
+  - {fileID: 11400000, guid: 36af765b51b75c5409431e90f314dc95, type: 2}
+  - {fileID: 11400000, guid: c843e1379feb28342827031f9bf0b928, type: 2}
+  - {fileID: 11400000, guid: 7107ba1c90e83ae47b4baeba95cf3a59, type: 2}
+  nextSceneToLoad: SampleScene_2
+  voiceAudioSource: {fileID: 0}
